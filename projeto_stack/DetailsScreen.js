@@ -1,12 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
-export default function DatailsScreen({navigation}) {
+export default function DatailsScreen({navigation, route}) {
+  const { produtoId } = route.params;
+  
   return (
     <View style={styles.container}>
       <Text style={styles.text}>🏣 Tela de Detalhes</Text>
       <Text>ID do Produto: {produtoId}</Text>
-      <Button title="Ir para Perfil" onPress={() => navigation.navigate('Perfil')} />
+      <Button 
+        title="Ir para Perfil" 
+        onPress={() => navigation.navigate('Perfil')} 
+      />
     </View>
   );
 }
